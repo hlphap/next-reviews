@@ -1,8 +1,11 @@
+import Heading from "@/components/Heading";
+
 export default function AboutPage() {
   return (
     <>
-      <h1>This is about page</h1>
+      <Heading>This is about page</Heading>
+      <img src="/images/hellblade.jpg" alt="Hellblade" />
       <p>This is about page description</p>
     </>
-  )
+  );
 }

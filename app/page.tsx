@@ -1,20 +1,29 @@
-/**
- * You're importing a component that needs useEffect. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
-  Learn more: https://nextjs.org/docs/getting-started/react-essentials
- */
-'use client'
-import { useEffect } from "react"
+import Link from "next/link";
+
+import Heading from "@/components/Heading";
 
 export default function Homepage() {
-  console.log("Homepage rendering")
-
-  useEffect(() => {
-    console.log("hehe")
-  }, [])
   return (
     <>
-      <h1>This is homepage</h1>
-      <p>This is homepage description</p>
+      <Heading>Indie Gamer</Heading>
+      <p>Only the best indie games, reviewed for you.</p>
+      <div className="border w-80 bg-white rounded shadow hover:shadow-xl sm:w-full">
+        <Link
+          href="/reviews/stardew-valley"
+          className="flex flex-col sm:flex-row"
+        >
+          <img
+            src="/images/stardew-valley.jpg"
+            alt="Stardew valley"
+            width={320}
+            height={180}
+            className="rounded-t sm:rounded-l sm:rounded-r-none"
+          />
+          <h2 className="font-semibold font-orbitron py-1 text-center sm:px-2">
+            Stardew valley
+          </h2>
+        </Link>
+      </div>
     </>
-  )
+  );
 }

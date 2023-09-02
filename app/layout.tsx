@@ -1,31 +1,24 @@
-import Link from "next/link"
+import { exo2, orbitron } from "@/app/fonts";
+import Navbar from "@/components/Navbar";
+
+import "./globals.css";
 
 interface IProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function Root({ children }: IProps) {
   return (
-    <html lang="en">
-      <body>
-      <header style={{border: "solid blue 1px"}}>
-         <nav>
-          <ul>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/reviews/hollow-knight">Hollow knight</Link>
-            </li>
-            <li>
-              <Link href="/reviews/stardew-valley">Stardew valley</Link>
-            </li>
-          </ul>
-         </nav>
-      </header>
-      {children}
-      <footer style={{border: "solid green 1px"}}>[Footer]</footer>
+    <html lang="en" className={`${exo2.variable} ${orbitron.variable}`}>
+      <body className="bg-orange-50 flex flex-col px-4 py-2 min-h-screen">
+        <header>
+          <Navbar />
+        </header>
+        <main className="grow py-3">{children}</main>
+        <footer className="text-center text-xs border-t py-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </footer>
       </body>
     </html>
-  )
+  );
 }
